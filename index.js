@@ -1,6 +1,6 @@
 import { startExpressServer } from "./config/app.js";
-import dotenv from "dotenv/config";
-import path from "path";
+import dotenv from "dotenv/config.js";
+
 
 
 const startServer = async () => {

@@ -4,7 +4,7 @@ const validateRequest = (schema) => {
       schema.parse(req.body); // Validates the body
       next();
     } catch (e) {
-      res.status(400).json({ error: e.errors[0].message }); // Return error if validation fails
+      res.status(400).json({ message:"All feilds required" }); // Return error if validation fails
     }
   };
 };

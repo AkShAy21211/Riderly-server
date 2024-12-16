@@ -4,6 +4,7 @@ import fs from "fs";
 import https from "https";
 import connectDB from "./db.js";
 import authRoute from "../routes/auth.route.js";
+import vechileRoute from "../routes/vechile.route.js";
 
 export const startExpressServer = () => {
   try {
@@ -37,7 +38,7 @@ export const startExpressServer = () => {
     //===== routes =====//
     app.use("/api/auth", authRoute);
     app.use("/api/customer", () => {});
-    app.use("/api/driver", () => {});
+    app.use("/api/vechile", vechileRoute);
 
     // catch 404 and forward to error handler
     app.use(function (req, res, next) {

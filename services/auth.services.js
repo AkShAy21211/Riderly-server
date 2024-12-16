@@ -24,7 +24,7 @@ export const loginService = async ({ email, password }) => {
     return {
       message: "Login successful",
       success: true,
-      token,
+      token: token.accessToken,
     };
   } catch (error) {
     console.error(error);
@@ -41,7 +41,6 @@ export const registerService = async ({ name, email, phone, password }) => {
       };
     }
 
-    
     const hashPassword = await hashpassword(password);
     const newUser = new UserModel({
       name,

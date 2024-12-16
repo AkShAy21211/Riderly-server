@@ -1,11 +1,13 @@
 import jwt from "jsonwebtoken";
+import SECRETS from "../config/index.js";
+
 
 export const generateAccessToken = (payload) => {
-  return jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "15m" });
+  return jwt.sign(payload, SECRETS.JWT_SECRET, { expiresIn: "1h" });
 };
 
 export const generateRefreshToken = (payload) => {
-  return jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "7d" });
+  return jwt.sign(payload, SECRETS.JWT_SECRET, { expiresIn: "7d" });
 };
 
 export const generateToken = (payload) => {
